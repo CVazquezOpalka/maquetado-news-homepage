@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: auto;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.grid_container > * {
+  text-align: center;
+}
+
+.grid_container {
+  position: relative;
+  display: grid;
+  grid-template: "header" 80px "section_1" auto "aside" auto "section_2" auto "footer" 40px;
+  gap: 10px;
+}
+.grid_container .active {
+  right: 0;
+  z-index: 100;
+}
+
+.float {
+  position: fixed;
+  top: 0;
+  right: -2000px;
+  width: 60%;
+  height: 100%;
+  background-color: #fff;
+  transition: 0.5s ease-in-out;
+  border-left: 1px solid #111;
+  display: flex;
+  flex-direction: column;
+}
+.float .img_box {
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 10px;
+}
+.float .img_box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.float .links {
+  margin-top: 60px;
+  padding: 30px;
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+.float .links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 20px;
+}
+
+.header {
+  grid-area: header;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .links {
+  display: none;
+}
+.header button {
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.section_1 {
+  grid-area: section_1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.section_1 .img_box {
+  width: 440px;
+  height: auto;
+  overflow: hidden;
+}
+.section_1 .img_box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section_1 .content_content .title h1 {
+  text-align: start;
+  font-size: 70px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.section_1 .content_content .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.section_1 .content_content .content p {
+  opacity: 0.5;
+  text-align: start;
+  font-size: 20px;
+}
+.section_1 .content_content .content button {
+  padding: 10px 20px;
+  border: none;
+  background: tomato;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.section_1 .content_content .content button:hover {
+  background-color: #07022f;
+}
+
+.section_2 {
+  grid-area: section_2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.section_2 .card_body {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  gap: 15px;
+}
+.section_2 .card_body .img_box {
+  width: 200px;
+  height: 180px;
+}
+.section_2 .card_body .img_box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section_2 .card_body .card_content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+}
+.section_2 .card_body .card_content .number {
+  width: 100%;
+  text-align: start;
+  margin-bottom: 10px;
+}
+.section_2 .card_body .card_content .number h1 {
+  font-size: 40px;
+  opacity: 0.55;
+}
+.section_2 .card_body .card_content .title {
+  width: 100%;
+  text-align: start;
+  margin-bottom: 30px;
+}
+.section_2 .card_body .card_content .title h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.section_2 .card_body .card_content .title h3:hover {
+  color: tomato;
+}
+.section_2 .card_body .card_content .card_content_paragrapht {
+  width: 100%;
+  text-align: start;
+}
+.section_2 .card_body .card_content .card_content_paragrapht p {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.aside {
+  overflow: hidden;
+  grid-area: aside;
+  padding: 20px 20px;
+  height: 620px;
+}
+.aside .content_box {
+  padding: 20px;
+  background: #07022f;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+}
+.aside .content_box .title {
+  width: 100%;
+  height: 80px;
+}
+.aside .content_box .title h1 {
+  font-size: 40px;
+  color: rgb(205, 212, 27);
+  text-align: start;
+}
+.aside .content {
+  width: 100%;
+  height: 100px;
+}
+.aside .content h2 {
+  width: 100%;
+  color: #fff;
+  text-align: start;
+  font-size: 27px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.aside .content h2:hover {
+  color: rgb(205, 212, 27);
+}
+.aside .content p {
+  width: 100%;
+  color: #fff;
+  text-align: start;
+  font-size: 21px;
+}
+.aside hr {
+  width: 100%;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+@media (min-width: 600px) {
+  .grid_container {
+    padding: 0 60px;
+    grid-template: "header    header" 100px "section_1 aside" auto "section_2 section_2" auto "footer    footer" 30px/auto 500px;
+  }
+  .header button {
+    display: none;
+  }
+  .header .links {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header .links a {
+    text-decoration: none;
+    color: #111;
+  }
+  .header .links a:hover {
+    color: tomato;
+  }
+  .section_1 .img_box {
+    width: 100%;
+    height: 400px;
+  }
+  .section_1 .img_box img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .section_1 .content_content {
+    display: flex;
+    gap: 40px;
+  }
+  .section_1 .content_content .title {
+    width: 30%;
+  }
+  .section_1 .content_content .title h1 {
+    font-size: 30px;
+  }
+  .section_1 .content_content .content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 70%;
+    height: 100%;
+    gap: 10px;
+  }
+  .section_1 .content_content .content p {
+    width: 100%;
+    text-align: start;
+    font-size: 1.18em;
+    margin-bottom: 20px;
+  }
+  .section_1 .content_content .content button {
+    padding: 10px 20px;
+    border: none;
+    background: tomato;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  .section_1 .content_content .content button:hover {
+    background-color: #07022f;
+  }
+  .section_2 {
+    flex-direction: row;
+    width: 100%;
+    height: 250px;
+  }
+}/*# sourceMappingURL=style.css.map */
